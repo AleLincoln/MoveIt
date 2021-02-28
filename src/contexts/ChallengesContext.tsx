@@ -23,12 +23,11 @@ interface ChallengesContextData {
     experienceToNextLevel:number;
     completChallenge:() => void;
     closeLevelUpModal:() => void;
-    userName:ReactNode;
+    userName:string;
     
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData)
-
 
 interface ChallengesProviderProps {
     children: ReactNode;
@@ -44,7 +43,7 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
     const [activeChallenge, setActiveChallenge] = useState(null)
     const experienceToNextLevel = Math.pow((rest.level + 1)*4, 2)
     const [isLevelModalOpen, setIsLevelModalOpen] = useState(false)
-    const userName = useRouter().query.username 
+    const userName = String(useRouter().query.username) 
 
     
     
