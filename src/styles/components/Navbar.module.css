@@ -1,0 +1,29 @@
+.Navbar{
+    height: 100vh;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.Navbar img{
+    width: 80%;
+}
+
+.Navbar p{
+    cursor: pointer;
+    border: 2px solid var(--white);
+    transition: 0.5s;
+}
+
+.Navbar .HomeLogo{
+    font-size: 2rem;
+    color:var(--blue);
+    
+}
+
+.Navbar p:hover{
+    border-left: 2px solid var(--blue);
+}

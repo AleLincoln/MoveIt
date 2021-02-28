@@ -43,7 +43,19 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
     const [activeChallenge, setActiveChallenge] = useState(null)
     const experienceToNextLevel = Math.pow((rest.level + 1)*4, 2)
     const [isLevelModalOpen, setIsLevelModalOpen] = useState(false)
-    const userName = String(useRouter().query.username) 
+    const userName = useRouter().query.username
+
+    async function getData(){
+        await fetch(`https://api.github.com/users/${userName}`)
+        .then(function(response){
+            return response.json()
+        }).then(function(data){
+            console.log(data)
+        })
+    }
+
+
+    getData()
 
     
     
@@ -53,11 +65,12 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
 
     useEffect(() => {
 
+        Cookies.set('userName', String(userName))
         Cookies.set('level', String(level))
         Cookies.set('currentExperience', String(currentExperience))
         Cookies.set('challengesCompleted', String(challengesCompleted))
 
-    }, [level, currentExperience, challengesCompleted])
+    }, [userName, level, currentExperience, challengesCompleted])
 
 
 
