@@ -1,17 +1,79 @@
 .container{
     height: 100vh;
-    max-width: 992px;
-    margin:0 auto;
-    padding: 2.5rem 2rem;
-  
     display: flex;
-    flex-direction: column;
-  }
+    flex-direction: row;
+    align-items: center;
+    justify-content:unset;
+    background-color: var(--blue-dark);
+}
 
-  .container section{
-      flex:1;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:6.25rem;
-      align-content: center;
-  }
+.container:first-child{
+    flex: 1;
+    height: 100vh;
+}
+
+.container > div img{
+    display: flex;
+    width: 95%;
+}
+
+
+.container:last-child{
+    display: flex;
+    flex: column;
+}
+
+.secondDiv strong{
+    margin-top: 2rem;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.secondDiv p{
+    font-size: 1rem;
+    color:var(--white);
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+}
+
+.secondDiv form{
+    display: flex;
+}
+
+.secondDiv form input{
+    height: 2.5rem;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+    display: flex;
+    border: solid 1px var(--blue);
+    padding: 1.5rem;
+    justify-content: space-between;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.secondDiv form input::placeholder{
+    color:var(--white)
+}
+
+.secondDiv form button{
+    color: var(--white);
+    background-color: var(--blue-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid var(--white);
+    margin-left: 1.5rem;
+    width: 3rem;
+    cursor:pointer;
+}
+
+.secondDiv form button:hover{
+    background-color: var(--green);
+    transition: 0.5s;
+}
+
