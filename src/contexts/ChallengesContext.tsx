@@ -23,7 +23,7 @@ interface ChallengesContextData {
     experienceToNextLevel:number;
     completChallenge:() => void;
     closeLevelUpModal:() => void;
-    userName:string;
+    userName:ReactNode;
     
 }
 

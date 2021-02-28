@@ -10,7 +10,7 @@ export default function Profile(){
 
     return (
         <div className={styles.profileContainer}>
-            <img src={`https://github.com/${userName}.png`}></img>
+            <img src={`https://github.com/${userName}.png`} alt={userName}></img>
             <div>
                 <strong>
                     {userName}    
