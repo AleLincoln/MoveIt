@@ -9,17 +9,21 @@ export default function Home() {
     const router = useRouter()
     const [userName, setUserName] = useState('')
 
-    function handleSubmit(event) {
-        event.preventDefault()
-
-        router.push(`/game?username=${userName}`)
-
-        console.log(userName)
-    }
-
     function handleChange(event) {
         setUserName(event.target.value)
     }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+
+        console.log(userName)
+
+        router.push(`/game?username=${userName}`)
+
+        
+    }
+
+  
 
 
     return (
@@ -31,7 +35,7 @@ export default function Home() {
                     Início
                 </title>
             </Head>
-            <div>
+            <div className={styles.firstDiv}>
                 <img src='/icons/Simbolo.png' alt='logo de fundo' />
             </div>
 

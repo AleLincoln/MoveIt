@@ -28,31 +28,31 @@ export default function Game(props: GameProps) {
 
   return (
     <ChallengesProvider level={props.level} currentExperience={props.currentExperience} challengesCompleted={props.challengesCompleted}>
-      <div style={{display:'flex',}}>
-      <Navbar />
-      <div className={styles.container}>
-        <Head>
-          <title>
-            {`${props.userName} - Level ${props.level}`}
-          </title>
-        </Head>
+      <div style={{ display: 'flex', }}>
+        <Navbar />
+        <div className={styles.container}>
+          <Head>
+            <title>
+              {`${props.userName} - Level ${props.level}`}
+            </title>
+          </Head>
 
-        <ExperienceBar />
-        <CountdownProvider>
-        
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
+          <ExperienceBar />
+          <CountdownProvider>
 
-          </section>
-        </CountdownProvider>
-      </div>
+            <section>
+              <div>
+                <Profile />
+                <CompletedChallenges />
+                <Countdown />
+              </div>
+              <div>
+                <ChallengeBox />
+              </div>
+
+            </section>
+          </CountdownProvider>
+        </div>
 
 
       </div>
