@@ -7,8 +7,9 @@ import Profile from '../components/Profile'
 import styles from '../styles/pages/Game.module.css'
 import { CountdownProvider } from '../contexts/CountdownContext'
 import { GetServerSideProps } from 'next'
-import { ChallengesProvider } from '../contexts/ChallengesContext'
+import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengesContext'
 import { Navbar } from '../components/Navbar'
+import { useContext } from 'react'
 
 
 interface GameProps {
@@ -20,11 +21,8 @@ interface GameProps {
 
 
 
-
 export default function Game(props: GameProps) {
-
-
-
+  const {level, userName} = useContext(ChallengesContext)
 
   return (
     <ChallengesProvider level={props.level} currentExperience={props.currentExperience} challengesCompleted={props.challengesCompleted}>
